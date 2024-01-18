@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BitLab Exchange</title>
+</head>
+<body>
+<div class="b">
+	<div><h1 class="G1 G2">BitLab Exchange</h1>
+		<h3 class="G1 G2">Your finance asistant</h3>
+	</div>
+
+	<div class="s">
+		<!--Begin profin.kz exchange rates code-->
+	<div id="informer-exchange-profinkz"></div>
+	<script src="https://profin.kz/informer/exchange/"></script>
+	<!--End profin.kz exchange rates code-->
+	</div>
+</div>
+
+	<div>
+		<h1>Converter</h1>
+		<table class="tab">
+		<tr>
+			<td>Введите сумму:</td>
+			<td></td>
+			<td>KZT (KAZ Tenge)</td>
+			<td>UDS (USA Dollar)</td>
+			<td>EUR (EU Euro)</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="" id="sum" >
+			</td>
+			<td>
+				<select id="currency" onchange="conv()">
+					<option value="none">None</option>
+					<option value="KZTV">KZT</option>
+					<option value="USDV">USD</option>
+					<option value="EURV">EUR</option>
+				</select>
+			</td>
+			<td>
+				<input id="KZT" readonly placeholder="0.00">
+			</td>
+			<td>
+				<input id="USD" readonly placeholder="0.00">
+			</td>
+			<td>
+				<input id="EUR" readonly placeholder="0.00">
+			</td>
+		</tr>
+	</table>
+	</div>
+	<div class="ta"><table class="ta1"><tr><td><a href="http://www.profinance.ru" id="forexpf_economic" style="font-size: 13px; margin-bottom: 5px; font-weight:bold">Новости экономики</a><br><script src="https://informers.forexpf.ru/export/economic.js"></script></td></tr></table></div>
+</body>
+<script>
+	function conv() {
+		let sum1 = document.getElementById("sum").value; 
+		let currency1 = document.getElementById("currency").value;
+
+		let dol = 451.25;
+		let euro = 491.14;
+		let ten = 1.09
+		let resultDol;
+		let resultEuro;
+
+		if (currency1==="KZTV") {
+			resultDol = parseFloat(sum1/(dol));
+			resultEuro = parseFloat(sum1/(euro));
+			document.getElementById("USD").value=resultDol.toFixed(2);
+			document.getElementById("EUR").value=resultEuro.toFixed(2);
+			document.getElementById("KZT").value=sum1;
+		}
+		 if (currency1==="USDV") {
+			resultDol = parseFloat(sum1*(dol));
+			resultEuro = parseFloat(sum1/(ten));
+			document.getElementById("USD").value=sum1;
+			document.getElementById("EUR").value=resultEuro.toFixed(2);
+			document.getElementById("KZT").value=resultDol.toFixed(2);
+		}
+		 if (currency1==="EURV") {
+			resultDol = parseFloat(sum1*(ten));
+			resultEuro = parseFloat(sum1*(euro));
+			document.getElementById("USD").value=resultDol.toFixed(2);
+			document.getElementById("EUR").value=sum1;
+			document.getElementById("KZT").value=resultEuro.toFixed(2);
+		}
+		if (currency1==="none") {
+			document.getElementById("USD").value="0";
+			document.getElementById("EUR").value="0";
+			document.getElementById("KZT").value="0";
+		}
+	}
+</script>
+</html>
