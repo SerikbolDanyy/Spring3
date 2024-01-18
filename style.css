@@ -1,0 +1,45 @@
+body{
+	background: rgb(242,239,187);
+	display: flex;
+	flex-wrap: wrap;
+}
+.ta1{
+	border-collapse:collapse;
+	border-color:#D7D7D7;"
+	border: 1;
+	cellpadding: 0;
+	cellspacing: 10;
+	background: rgb(242,239,187);
+	width: 100%;
+}
+.ta a{
+	text-decoration: none;
+}
+.ta{
+	margin: 50px 100px;
+	width: 80%;
+}
+input, select{
+	border-color: gold;
+	background: rgb(242,239,187);
+}
+.b{
+	width: 98%;
+	height: 75px;
+	display: flex;
+	justify-content: space-between;
+}
+.s{
+	
+}
+.G1 {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight:bold;
+  -webkit-margin-before: 0.3em;
+  -webkit-margin-after: 0.2em;
+}
+.G2 {
+  background-image: -webkit-linear-gradient(#E8D800, #E0CF00 50%, #A86800 60%, #A86800 );
+  text-shadow: -2px -2px 1px rgba(255, 255, 0, 0.56);
+}
